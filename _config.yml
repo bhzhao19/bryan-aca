@@ -25,9 +25,9 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "赵博涵 Bohan Zhao (Bryan)"
-  pronouns         : # example: "she/her"  
+  pronouns         : "he/him"  
   bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
+  location         : "Shanghai, China"
   employer         : "University of Washington<br>Fudan University"
   uri              : # URL
   email            : "bhzhao19@gmail.com<br>  bhzhao26@m.fudan.edu.cn<br>  zhaobohan@pjlab.org.cn"

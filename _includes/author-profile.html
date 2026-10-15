@@ -30,7 +30,7 @@
       {% if author.employer %}
         {% assign employer_lines = author.employer | split: "<br>" %}
         {% for line in employer_lines %}
-          <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ line | strip }}</li>
+          <li class="author__desktop employer-item{% if forloop.first %} first{% endif %}"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ line | strip }}</li>
         {% endfor %}
       {% endif %}
       {% if author.uri %}
@@ -40,11 +40,13 @@
         {% assign email_lines = author.email | split: "<br>" %}
         {% for line in email_lines %}
           {% assign parts = line | split: ": " %}
-          {% if parts.size == 2 %}
-            <li><a href="mailto:{{ parts[1] | strip }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ parts[0] | strip }}: {{ parts[1] | strip }}</a></li>
-          {% else %}
-            <li><a href="mailto:{{ line | strip }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ line | strip }}</a></li>
-          {% endif %}
+          <li class="email-item{% if forloop.first %} first{% endif %}">
+            {% if parts.size == 2 %}
+              <a href="mailto:{{ parts[1] | strip }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ parts[0] | strip }}: {{ parts[1] | strip }}</a>
+            {% else %}
+              <a href="mailto:{{ line | strip }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ line | strip }}</a>
+            {% endif %}
+          </li>
         {% endfor %}
       {% endif %}
 

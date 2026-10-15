@@ -307,6 +307,18 @@
     white-space: nowrap;
   }
 
+  // 隐藏 employer 和 email 非首行的 icon，并实现缩进对齐
+  .author__urls .employer-item:not(.first) .icon-pad-right,
+  .author__urls .email-item:not(.first) .icon-pad-right {
+    display: none;
+  }
+
+  .author__urls .employer-item:not(.first),
+  .author__urls .email-item:not(.first) {
+    padding-left: 1.2em;
+    margin-top: 2px;
+  }
+
   a {
     display: block;
     margin-bottom: 5px;
